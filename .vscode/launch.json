@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EscolaCompletoBApplication<escola_completo_b>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "webapp.escola_completo_b.EscolaCompletoBApplication",
+            "projectName": "escola_completo_b",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

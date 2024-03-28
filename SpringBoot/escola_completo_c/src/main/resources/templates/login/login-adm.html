@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style-login.css}">
+    <title>Escola XYZ - Login ADM</title>
+    <div th:replace="~{fragmentos/head}"><!-- barra de menu --></div>
+</head>
+<body>
+    <div th:replace="~{fragmentos/header}"><!-- barra de menu --></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Login do Administrador</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="acesso-adm" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nome de Usuário" name="cpf"> <!-- Correção do atributo name -->
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Senha" name="senha"> <!-- Correção do atributo name -->
+                                </div>
+                                <button type="submit" class="btn btn-block btn-login"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+                                <a th:href="@{/cadastro-adm}"><button type="button" class="btn btn-block btn-login"><i class="fas fa-sign-in-alt"></i> Cadastrar</button></a> <!-- Correção do th:href -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
