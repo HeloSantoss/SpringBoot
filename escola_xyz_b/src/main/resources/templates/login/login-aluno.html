@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola XYZ - Login de Alunos</title>
+    <link rel="stylesheet" href="caminho/para/seu/arquivo/css/style-login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Login do Aluno</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="acesso-aluno" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Matrícula do Aluno" name="matricula">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Senha" name="senha">
+                                </div>
+                                <button type="submit" class="btn btn-block btn-login"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+                                <a href="/cadastro-aluno"><button type="button" class="btn btn-block btn-login"><i class="fas fa-user-plus"></i> Cadastrar</button></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
