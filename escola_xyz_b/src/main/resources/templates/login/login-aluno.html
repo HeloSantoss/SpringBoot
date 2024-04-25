@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escola XYZ - Login de Alunos</title>
-    <link rel="stylesheet" href="caminho/para/seu/arquivo/css/style-login.css">
+    <div th:insert="~{fragmentos/head}"></div>
+    <link rel="stylesheet" th:href="@{css/style-cadastro.css}">
 </head>
 <body>
+    <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">

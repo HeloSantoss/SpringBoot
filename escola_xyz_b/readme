@@ -43,12 +43,12 @@ baixar instenções do spring boot
 		- disciplinas 
 	- Cadastro do Docente(Atribuir Disciplinas)
 	
-	- filtros (Listar Alunos e Docentes)
+	- filtros (Listar Alunos e Docentes) - não é necessario
 
  - Aluno - acesso interno(area do aluno)(user / pass)
-	- ver informações das suas disciplinas
+	- ver informações das suas disciplinas (qual esta cadastrado)
 
  - Docente - ACESSO AREA INTERNA (user / pass)
-	  - LAnças notas para os alunos
+	  - LAnças notas para os alunos (não é neecssario)
 	  - listar alunos cadastrados em suas disciplinas
   	

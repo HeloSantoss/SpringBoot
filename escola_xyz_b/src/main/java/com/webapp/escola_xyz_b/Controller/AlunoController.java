@@ -3,13 +3,11 @@ package com.webapp.escola_xyz_b.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webapp.escola_xyz_b.Model.Aluno;
 import com.webapp.escola_xyz_b.Repository.AlunoRepository;
-import com.webapp.escola_xyz_b.Repository.VerificaCadastroAluno;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AlunoController {
@@ -17,35 +15,21 @@ public class AlunoController {
     @Autowired
     AlunoRepository alunoRepository;
 
-    @Autowired
-    VerificaCadastroAluno verificaCadastroAluno;
-
     boolean acessoAluno = false;
 
-    @PostMapping("cadastrar-aluno")
+    @PostMapping("/cadastrar-aluno")
     public String cadastrarAlunoBD(Aluno aluno) {
-        boolean verificaCpf = verificaCadastroAluno.existsById(aluno.getCpf());
-        if (verificaCpf) {
-            alunoRepository.save(aluno);
-            System.out.println("Cadastro de aluno realizado com sucesso");
-        } else {
-            System.out.println("Falha ao cadastrar aluno");
-        }
-        return "/login/login-aluno";
+        alunoRepository.save(aluno);
+        System.out.println("Cadastro de aluno realizado com sucesso");
+        return "redirect:/login/login-aluno";
     }
 
     @GetMapping("/interna-aluno")
     public String acessoPageInternaAluno() {
-        String vaiPara = "";
-        if (acessoAluno) {
-            vaiPara = "interna/interna-aluno";
-        } else {
-            vaiPara = "login/login-aluno";
-        }
-        return vaiPara;
+        return acessoAluno ? "interna/interna-aluno" : "login/login-aluno";
     }
 
-    @PostMapping("acesso-aluno")
+    @PostMapping("/acesso-aluno")
     public String acessoAluno(@RequestParam String cpf, @RequestParam String senha) {
         try {
             boolean verificaCpf = alunoRepository.existsById(cpf);
